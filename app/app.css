@@ -1,15 +1,54 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+:root {
+  /* Colors */
+  --color-background: #ffffff;
+  --color-foreground-text: #000000;
+  --color-zinc-border: #e4e4e7;
+  --color-near-black-cta: #18181b;
+  --color-cta-text: #fafafa;
+  --color-muted-text: #424242;
+  --color-surface-subtle: #fafafa;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 42rem;
+  --spacing-3xl: 48px;
+  --spacing-section-max: 304px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-base-var: 0.5rem;
+
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+@theme {
+    --color-background: var(--color-background);
+    --color-foreground-text: var(--color-foreground-text);
+    --color-zinc-border: var(--color-zinc-border);
+    --color-near-black-cta: var(--color-near-black-cta);
+    --color-cta-text: var(--color-cta-text);
+    --color-muted-text: var(--color-muted-text);
+    --color-surface-subtle: var(--color-surface-subtle);
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+    --spacing-xs: var(--spacing-xs);
+    --spacing-sm: var(--spacing-sm);
+    --spacing-md: var(--spacing-md);
+    --spacing-lg: var(--spacing-lg);
+    --spacing-xl: var(--spacing-xl);
+    --spacing-2xl: var(--spacing-2xl);
+    --spacing-3xl: var(--spacing-3xl);
+    --spacing-section-max: var(--spacing-section-max);
+
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-base-var: var(--radius-base-var);
+
+    --font-sans: 'Geist', 'Inter', sans-serif;
+    --font-mono: 'Geist', 'SF Mono', monospace;
 }

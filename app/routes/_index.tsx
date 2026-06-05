@@ -1,13 +1,22 @@
-import type { Route } from "./+types/_index"
-import { Welcome } from "../welcome/welcome";
+import { Header } from '~/components/Header'
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+    { title: 'Meu Portfólio - Vittor' },
+    { name: 'description', content: 'Bem-vindo ao meu portfólio' },
+  ]
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <main className="mx-auto my-6 max-w-2xl px-6 font-sans">
+      <section className="py-12">
+        <Header />
+      </section>
+
+      <footer>
+        <p className="text-center">Vittor</p>
+      </footer>
+    </main>
+  )
 }

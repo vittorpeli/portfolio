@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground-text);
+}
+
 :root {
   /* Colors */
+// ...
   --color-background: #ffffff;
   --color-foreground-text: #000000;
   --color-zinc-border: #e4e4e7;
@@ -11,6 +17,21 @@
   --color-surface-subtle: #fafafa;
 
   /* Spacing */
+// ...
+}
+
+.dark {
+  --color-background: #09090b;
+  --color-foreground-text: #fafafa;
+  --color-zinc-border: #27272a;
+  --color-near-black-cta: #fafafa;
+  --color-cta-text: #18181b;
+  --color-muted-text: #a1a1aa;
+  --color-surface-subtle: #18181b;
+}
+
+@theme {
+// ...
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;

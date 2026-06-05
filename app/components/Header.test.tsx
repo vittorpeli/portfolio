@@ -1,10 +1,27 @@
 import { render, screen } from "@testing-library/react"
-import { describe, expect, it } from "vitest"
+import { describe, expect, it, vi } from "vitest"
 import { Header } from "./Header"
+import { ThemeProvider } from "../context/ThemeContext"
+
+// Mock matchMedia
+const mockMatchMedia = vi.fn().mockImplementation((query) => ({
+  matches: false,
+  media: query,
+  onchange: null,
+  addEventListener: vi.fn(),
+  removeEventListener: vi.fn(),
+  dispatchEvent: vi.fn(),
+}))
+
+vi.stubGlobal('matchMedia', mockMatchMedia)
 
 describe("Header", () => {
   it("renders placeholder data correctly", () => {
-    render(<Header />)
+    render(
+      <ThemeProvider>
+        <Header />
+      </ThemeProvider>
+    )
 
     expect(screen.getByText("Vittor Pelicarto")).toBeInTheDocument()
     expect(screen.getByText("Desenvolvedor Web")).toBeInTheDocument()

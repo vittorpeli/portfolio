@@ -1,5 +1,6 @@
-import { FileUser, Mail, MapPin } from 'lucide-react'
+import { FileUser, Mail, MapPin, Sun, Moon } from 'lucide-react'
 import { profile } from '~/data/profile'
+import { useTheme } from '~/context/ThemeContext'
 
 export function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -30,22 +31,34 @@ export function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export function Header() {
+  const { theme, toggleTheme } = useTheme()
+
   return (
     <header className="grid gap-xl">
-      <div className="flex items-center gap-md w-full">
-        <div className="grid gap-sm">
-          <h1 className="text-2xl font-semibold tracking-[-1.2px] text-foreground-text">
-            {profile.name}
-          </h1>
-          <p className="text-base text-muted-text">{profile.role}</p>
-          <div className="flex items-center gap-sm text-muted-text">
-            <MapPin className="size-4" />
-            <span className="text-sm">{profile.location}</span>
+      <div className="flex items-center justify-between w-full">
+        <div className="flex items-center gap-md">
+          <div className="grid gap-sm">
+            <h1 className="text-2xl font-semibold tracking-[-1.2px] text-foreground-text">
+              {profile.name}
+            </h1>
+            <p className="text-base text-muted-text">{profile.role}</p>
+            <div className="flex items-center gap-sm text-muted-text">
+              <MapPin className="size-4" />
+              <span className="text-sm">{profile.location}</span>
+            </div>
+          </div>
+          <div className="size-32 rounded-full bg-surface-subtle border border-zinc-border flex items-center justify-center text-4xl font-semibold text-foreground-text shrink-0">
+            {profile.name.charAt(0)}
           </div>
         </div>
-        <div className="size-32 rounded-full bg-surface-subtle border border-zinc-border flex items-center justify-center text-4xl font-semibold text-foreground-text shrink-0">
-          {profile.name.charAt(0)}
-        </div>
+
+        <button
+          onClick={toggleTheme}
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
+          aria-label="Toggle theme"
+        >
+          {theme === 'light' ? <Moon className="size-5" /> : <Sun className="size-5" />}
+        </button>
       </div>
 
       <div className="flex items-center gap-md">

@@ -1,7 +1,7 @@
 import { FileUser, Mail, MapPin } from 'lucide-react'
 import { profile } from '~/data/profile'
 
-function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
+export function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
       <title>Github</title>
@@ -10,7 +10,7 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   )
 }
 
-function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
+export function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"

@@ -8,7 +8,8 @@
     "start": "react-router-serve ./build/server/index.js",
     "test": "vitest run",
     "typecheck": "react-router typegen && tsc",
-    "lint": "biome check ./app"
+    "lint": "biome check ./app",
+    "lint:fix": "biome check ./app --write"
   },
   "dependencies": {
     "@conform-to/react": "^1.19.3",

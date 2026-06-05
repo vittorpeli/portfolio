@@ -1,5 +1,5 @@
-import { FileUser, Mail, MapPin } from "lucide-react"
-import { profile } from "~/data/profile"
+import { FileUser, Mail, MapPin } from 'lucide-react'
+import { profile } from '~/data/profile'
 
 function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -12,33 +12,54 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
 
 function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
       <title>LinkedIn</title>
-      <path d="M20.44 0H3.56A3.56 3.56 0 000 3.56v16.88A3.56 3.56 0 003.56 24h16.88A3.56 3.56 0 0024 20.44V3.56A3.56 3.56 0 0020.44 0zM7.52 19.1H4.26V9.03h3.26v10.07zM5.89 7.68a1.89 1.89 0 110-3.78 1.89 1.89 0 010 3.78zM19.1 19.1h-3.26v-5.1c0-1.22-.02-2.79-1.7-2.79s-1.96 1.33-1.96 2.7v5.19H8.92V9.03h3.13v1.44h.04c.44-.83 1.5-1.7 3.08-1.7 3.29 0 3.9 2.17 3.9 4.98v5.35z" />
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
     </svg>
   )
 }
 
 export function Header() {
   return (
-    <header className="flex flex-col items-center gap-6 py-16">
-      <div className="size-32 rounded-full bg-linear-to-br from-sky-400 to-purple-500 flex items-center justify-center text-4xl font-bold text-white">
-        {profile.name.charAt(0)}
+    <header className="grid gap-xl">
+      <div className="flex items-center gap-md w-full">
+        <div className="grid gap-sm">
+          <h1 className="text-2xl font-semibold tracking-[-1.2px] text-foreground-text">
+            {profile.name}
+          </h1>
+          <p className="text-base text-muted-text">{profile.role}</p>
+          <div className="flex items-center gap-sm text-muted-text">
+            <MapPin className="size-4" />
+            <span className="text-sm">{profile.location}</span>
+          </div>
+        </div>
+        <div className="size-32 rounded-full bg-surface-subtle border border-zinc-border flex items-center justify-center text-4xl font-semibold text-foreground-text shrink-0">
+          {profile.name.charAt(0)}
+        </div>
       </div>
-      <div className="text-center">
-        <h1 className="text-4xl font-bold">{profile.name}</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400 mt-1">
-          {profile.role}
-        </p>
-      </div>
-      <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400">
-        <MapPin className="size-4" />
-        <span>{profile.location}</span>
-      </div>
-      <div className="flex items-center gap-4">
+
+      <div className="flex items-center gap-md">
+        <a
+          href={profile.resumeUrl}
+          download
+          className="inline-flex items-center gap-2 rounded-sm bg-near-black-cta px-4 py-2 text-sm font-medium text-cta-text shadow-sm hover:opacity-90"
+        >
+          <FileUser className="size-5" />
+          Currículo
+        </a>
         <a
           href={`mailto:${profile.email}`}
-          className="flex items-center justify-center rounded-lg bg-gray-100 p-2.5 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
           aria-label="Email"
         >
           <Mail className="size-5" />
@@ -47,7 +68,7 @@ export function Header() {
           href={profile.linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center rounded-lg bg-gray-100 p-2.5 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
           aria-label="LinkedIn"
         >
           <LinkedinIcon className="size-5" />
@@ -56,18 +77,10 @@ export function Header() {
           href={profile.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center rounded-lg bg-gray-100 p-2.5 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
           aria-label="GitHub"
         >
           <GithubIcon className="size-5" />
-        </a>
-        <a
-          href={profile.resumeUrl}
-          download
-          className="flex items-center gap-2 rounded-lg bg-sky-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-sky-600"
-        >
-          <FileUser className="size-5" />
-          Currículo
         </a>
       </div>
     </header>

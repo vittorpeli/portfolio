@@ -8,5 +8,15 @@ export function meta() {
 }
 
 export default function Home() {
-  return <Header />
+  return (
+    <main className="mx-auto my-6 max-w-2xl px-6 font-sans">
+      <section className="py-12">
+        <Header />
+      </section>
+
+      <footer>
+        <p className="text-center">Vittor</p>
+      </footer>
+    </main>
+  )
 }

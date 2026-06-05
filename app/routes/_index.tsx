@@ -1,4 +1,8 @@
 import { Header } from '~/components/Header'
+import { Introduction } from '~/components/Introduction'
+import { Skills } from '~/components/Skills'
+import { Experience } from '~/components/Experience'
+import { Education } from '~/components/Education'
 
 export function meta() {
   return [
@@ -13,6 +17,10 @@ export default function Home() {
       <section className="py-12">
         <Header />
       </section>
+      <Introduction />
+      <Skills />
+      <Experience />
+      <Education />
 
       <footer>
         <p className="text-center">Vittor</p>

@@ -7,6 +7,10 @@ export interface Profile {
   githubUrl: string
   resumeUrl: string
   photoUrl: string
+  introduction: string
+  skills: SkillCategory[]
+  experience: Experience[]
+  education: Education[]
 }
 
 export interface SkillCategory {
@@ -37,4 +41,26 @@ export const profile: Profile = {
   githubUrl: 'https://github.com/vittorpeli',
   resumeUrl: '/resume.pdf',
   photoUrl: '/avatar.svg',
+  introduction: 'Desenvolvedor Web apaixonado por criar experiências incríveis na web.',
+  skills: [
+    { title: 'Frontend', skills: ['React', 'TypeScript', 'Tailwind CSS'] },
+    { title: 'Backend', skills: ['Node.js', 'PostgreSQL'] },
+    { title: 'Tools', skills: ['Git', 'Docker'] },
+  ],
+  experience: [
+    {
+      company: 'Empresa de Exemplo',
+      role: 'Desenvolvedor Frontend',
+      period: 'Jan 2022 - Presente',
+      description: 'Desenvolvimento de interfaces modernas e responsivas.',
+    },
+  ],
+  education: [
+    {
+      institution: 'Universidade de Exemplo',
+      degree: 'Bacharelado em Ciência da Computação',
+      period: '2018 - 2022',
+      description: 'Foco em engenharia de software e algoritmos.',
+    },
+  ],
 }

@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react"
-import { describe, expect, it } from "vitest"
-import { Skills } from "./Skills"
-import { profile } from "~/data/profile"
+import { render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
+import { profile } from '~/data/profile'
+import { Skills } from './Skills'
 
-describe("Skills", () => {
-  it("renders all skill categories and their items", () => {
+describe('Skills', () => {
+  it('renders all skill categories and their items', () => {
     render(<Skills />)
 
     profile.skills.forEach((category) => {

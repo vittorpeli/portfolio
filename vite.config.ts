@@ -14,5 +14,7 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["./test-setup.ts"],
     css: true,
+    include: ["app/**/*.test.*", "test/**/*.test.*"],
+    exclude: ["**/.react-router/**"],
   },
 });

@@ -1,6 +1,6 @@
-import { FileUser, Mail, MapPin, Sun, Moon } from 'lucide-react'
-import { profile } from '~/data/profile'
+import { FileUser, Mail, MapPin, Moon, Sun } from 'lucide-react'
 import { useTheme } from '~/context/ThemeContext'
+import { profile } from '~/data/profile'
 
 export function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -56,8 +56,13 @@ export function Header() {
           onClick={toggleTheme}
           className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
           aria-label="Toggle theme"
+          type="button"
         >
-          {theme === 'light' ? <Moon className="size-5" /> : <Sun className="size-5" />}
+          {theme === 'light' ? (
+            <Moon className="size-5" />
+          ) : (
+            <Sun className="size-5" />
+          )}
         </button>
       </div>
 

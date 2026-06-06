@@ -31,7 +31,7 @@ export function Projects({ projects, error }: ProjectsProps) {
         {projects.map((project) => (
           <div
             key={project.name}
-            className="border rounded-lg p-6 shadow-sm flex flex-col"
+            className="border border-zinc-border rounded-lg p-6 shadow-sm flex flex-col"
           >
             <h3 className="text-xl font-semibold mb-2">
               <a
@@ -43,25 +43,25 @@ export function Projects({ projects, error }: ProjectsProps) {
                 {project.name}
               </a>
             </h3>
-            <p className="text-gray-600 mb-4 grow">{project.description}</p>
+            <p className="text-muted-text mb-4 grow">{project.description}</p>
             <div className="flex items-center mb-4">
               {project.language && (
                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-2" />
               )}
-              <span className="text-sm text-gray-500">{project.language}</span>
+              <span className="text-sm text-muted-text">{project.language}</span>
             </div>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.topics.map((topic: string) => (
                 <span
                   key={topic}
-                  className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded"
+                  className="bg-surface-subtle text-foreground-text text-xs px-2 py-1 rounded"
                 >
                   {topic}
                 </span>
               ))}
             </div>
             <div className="flex justify-between items-center mt-auto">
-              <div className="flex items-center text-sm text-gray-500">
+              <div className="flex items-center text-sm text-muted-text">
                 {project.stargazers_count > 0 ? (
                   <span>⭐ {project.stargazers_count}</span>
                 ) : null}

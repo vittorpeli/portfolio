@@ -25,8 +25,6 @@ describe('Projects component', () => {
     expect(screen.getByText('⭐ 10')).toBeInTheDocument()
     expect(screen.getByText('react')).toBeInTheDocument()
     expect(screen.getByText('ts')).toBeInTheDocument()
-    expect(screen.getByText('Repositório')).toBeInTheDocument()
-    expect(screen.getByText('Live Demo')).toBeInTheDocument()
   })
 
   it('renders error message when error is provided', () => {

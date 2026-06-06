@@ -1,5 +1,5 @@
-import { renderHook, act } from '@testing-library/react'
-import { describe, expect, it, vi, beforeEach } from 'vitest'
+import { act, renderHook } from '@testing-library/react'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { ThemeProvider, useTheme } from '../context/ThemeContext'
 
 // Mock matchMedia
@@ -61,7 +61,7 @@ describe('useTheme', () => {
 
   it('should load theme from localStorage on mount', () => {
     localStorage.setItem('theme', 'dark')
-    
+
     const { result } = renderHook(() => useTheme(), {
       wrapper: ThemeProvider,
     })

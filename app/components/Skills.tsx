@@ -1,8 +1,19 @@
-import { profile } from "~/data/profile"
+import { profile } from '~/data/profile'
+import { useIntersectionObserver } from '~/hooks/useIntersectionObserver'
 
-export function Skills() {
+interface SkillsProps {
+  delay?: number
+}
+
+export function Skills({ delay = 0 }: SkillsProps) {
+  const { ref, isVisible } = useIntersectionObserver()
+
   return (
-    <section className="py-12">
+    <section
+      ref={ref}
+      className={`py-12 fade-in-up${isVisible ? ' is-visible' : ''}`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
       <h2 className="text-2xl font-bold mb-6">Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {profile.skills.map((category) => (

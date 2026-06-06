@@ -1,16 +1,24 @@
 import { Link } from 'lucide-react'
+import { useIntersectionObserver } from '~/hooks/useIntersectionObserver'
 import type { Project } from '~/routes/_index'
 import { GithubIcon } from './Header'
 
 interface ProjectsProps {
   projects: Project[]
   error: string | null
+  delay?: number
 }
 
-export function Projects({ projects, error }: ProjectsProps) {
+export function Projects({ projects, error, delay = 0 }: ProjectsProps) {
+  const { ref, isVisible } = useIntersectionObserver()
+
   if (error) {
     return (
-      <section className="py-12">
+      <section
+        ref={ref}
+        className={`py-12 fade-in-up${isVisible ? ' is-visible' : ''}`}
+        style={{ animationDelay: `${delay}ms` }}
+      >
         <p className="text-red-500">{error}</p>
       </section>
     )
@@ -18,14 +26,22 @@ export function Projects({ projects, error }: ProjectsProps) {
 
   if (projects.length === 0) {
     return (
-      <section className="py-12">
+      <section
+        ref={ref}
+        className={`py-12 fade-in-up${isVisible ? ' is-visible' : ''}`}
+        style={{ animationDelay: `${delay}ms` }}
+      >
         <p>Nenhum projeto encontrado</p>
       </section>
     )
   }
 
   return (
-    <section className="py-12">
+    <section
+      ref={ref}
+      className={`py-12 fade-in-up${isVisible ? ' is-visible' : ''}`}
+      style={{ animationDelay: `${delay}ms` }}
+    >
       <h2 className="text-2xl font-bold mb-6">Projetos</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project) => (
@@ -48,7 +64,9 @@ export function Projects({ projects, error }: ProjectsProps) {
               {project.language && (
                 <span className="inline-block w-3 h-3 rounded-full bg-blue-500 mr-2" />
               )}
-              <span className="text-sm text-muted-text">{project.language}</span>
+              <span className="text-sm text-muted-text">
+                {project.language}
+              </span>
             </div>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.topics.map((topic: string) => (

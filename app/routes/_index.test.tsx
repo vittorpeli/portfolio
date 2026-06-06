@@ -117,6 +117,6 @@ describe('Home loader', () => {
     const response = await loader()
 
     expect(response.projects).toEqual([])
-    expect(response.error).toBe('Erro ao carregar projetos.')
+    expect(response.error).toBe('Erro ao carregar projetos. Network error')
   })
 })

@@ -35,26 +35,26 @@ export function Header() {
 
   return (
     <header className="grid gap-xl">
-      <div className="flex items-center justify-between w-full">
-        <div className="flex items-center gap-md">
-          <div className="grid gap-sm">
-            <h1 className="text-2xl font-semibold tracking-[-1.2px] text-foreground-text">
+      <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-md sm:gap-0">
+        <div className="flex flex-col sm:flex-row items-center gap-md">
+          <div className="grid gap-sm text-center sm:text-left">
+            <h1 className="text-xl sm:text-2xl font-semibold tracking-[-1.2px] text-foreground-text">
               {profile.name}
             </h1>
             <p className="text-base text-muted-text">{profile.role}</p>
-            <div className="flex items-center gap-sm text-muted-text">
+            <div className="flex items-center justify-center sm:justify-start gap-sm text-muted-text">
               <MapPin className="size-4" />
               <span className="text-sm">{profile.location}</span>
             </div>
           </div>
-          <div className="size-32 rounded-full bg-surface-subtle border border-zinc-border flex items-center justify-center text-4xl font-semibold text-foreground-text shrink-0">
+          <div className="size-24 sm:size-32 rounded-full bg-surface-subtle border border-zinc-border flex items-center justify-center text-4xl font-semibold text-foreground-text shrink-0">
             {profile.name.charAt(0)}
           </div>
         </div>
 
         <button
           onClick={toggleTheme}
-          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border rounded-md"
           aria-label="Toggle theme"
           type="button"
         >
@@ -66,18 +66,18 @@ export function Header() {
         </button>
       </div>
 
-      <div className="flex items-center gap-md">
+      <div className="flex items-center justify-center sm:justify-start gap-md">
         <a
           href={profile.resumeUrl}
           download
-          className="inline-flex items-center gap-2 rounded-sm bg-near-black-cta px-4 py-2 text-sm font-medium text-cta-text shadow-sm hover:opacity-90"
+          className="inline-flex items-center gap-2 rounded-sm bg-near-black-cta px-4 py-2 text-sm font-medium text-cta-text shadow-sm hover:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border"
         >
           <FileUser className="size-5" />
           Currículo
         </a>
         <a
           href={`mailto:${profile.email}`}
-          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border rounded-md"
           aria-label="Email"
         >
           <Mail className="size-5" />
@@ -86,7 +86,7 @@ export function Header() {
           href={profile.linkedinUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border rounded-md"
           aria-label="LinkedIn"
         >
           <LinkedinIcon className="size-5" />
@@ -95,7 +95,7 @@ export function Header() {
           href={profile.githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text"
+          className="inline-flex items-center justify-center p-2 text-foreground-text hover:text-muted-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border rounded-md"
           aria-label="GitHub"
         >
           <GithubIcon className="size-5" />

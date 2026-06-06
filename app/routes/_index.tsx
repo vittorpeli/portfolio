@@ -87,7 +87,7 @@ export default function Home() {
   }>()
 
   return (
-    <main className="mx-auto my-6 max-w-2xl px-6 font-sans">
+    <main className="mx-auto my-6 max-w-5xl px-6 font-sans">
       <section className="py-12">
         <Header />
       </section>

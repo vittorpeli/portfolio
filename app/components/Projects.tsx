@@ -43,22 +43,22 @@ export function Projects({ projects, error, delay = 0 }: ProjectsProps) {
       style={{ animationDelay: `${delay}ms` }}
     >
       <h2 className="text-2xl font-bold mb-6">Projetos</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((project) => (
           <div
             key={project.name}
             className="border border-zinc-border rounded-lg p-6 shadow-sm flex flex-col"
           >
-            <h3 className="text-xl font-semibold mb-2">
-              <a
-                href={project.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                {project.name}
-              </a>
-            </h3>
+             <h3 className="text-xl font-semibold mb-2">
+               <a
+                 href={project.html_url}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="hover:underline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border rounded-sm"
+               >
+                 {project.name}
+               </a>
+             </h3>
             <p className="text-muted-text mb-4 grow">{project.description}</p>
             <div className="flex items-center mb-4">
               {project.language && (
@@ -89,7 +89,7 @@ export function Projects({ projects, error, delay = 0 }: ProjectsProps) {
                   href={project.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 inline-flex items-center justify-center p-2 hover:text-muted-text"
+                  className="text-blue-600 inline-flex items-center justify-center p-2 hover:text-muted-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border rounded-md"
                 >
                   <GithubIcon className="size-5" />
                 </a>
@@ -98,7 +98,7 @@ export function Projects({ projects, error, delay = 0 }: ProjectsProps) {
                     href={project.homepage}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 inline-flex items-center justify-center p-2 hover:text-muted-text"
+                    className="text-blue-600 inline-flex items-center justify-center p-2 hover:text-muted-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-zinc-border rounded-md"
                   >
                     <Link className="size-5" />
                   </a>

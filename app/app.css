@@ -38,6 +38,35 @@ body {
   --color-surface-subtle: #18181b;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.js section.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.js section.fade-in-up.is-visible {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js section.fade-in-up,
+  .js section.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none;
+  }
+}
+
 @theme {
   --color-background: var(--color-background);
   --color-foreground-text: var(--color-foreground-text);

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
-import { Projects } from './Projects'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import type { Project } from '~/routes/_index'
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { Projects } from './Projects'
 
 describe('Projects component', () => {
   const mockProjects: Project[] = [

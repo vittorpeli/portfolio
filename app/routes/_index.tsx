@@ -91,11 +91,11 @@ export default function Home() {
       <section className="py-12">
         <Header />
       </section>
-      <Introduction />
-      <Skills />
-      <Experience />
-      <Education />
-      <Projects projects={projects} error={error} />
+      <Introduction delay={0} />
+      <Skills delay={100} />
+      <Experience delay={200} />
+      <Education delay={300} />
+      <Projects projects={projects} error={error} delay={400} />
 
       <footer>
         <p className="text-center">Vittor</p>

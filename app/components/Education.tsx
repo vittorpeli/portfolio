@@ -22,7 +22,6 @@ export function Education({ delay = 0 }: EducationProps) {
             <p className="text-muted-text">
               {entry.degree} | {entry.period}
             </p>
-            <p className="mt-2">{entry.description}</p>
           </div>
         ))}
       </div>

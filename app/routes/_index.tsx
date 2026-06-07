@@ -75,7 +75,7 @@ export async function loader(): Promise<LoaderResponse> {
 
 export function meta() {
   return [
-    { title: 'Meu Portfólio - Vittor' },
+    { title: 'Vittor Pelicarto | Portfólio - Desenvolvedor Web' },
     { name: 'description', content: 'Bem-vindo ao meu portfólio' },
   ]
 }
@@ -98,7 +98,9 @@ export default function Home() {
       <Projects projects={projects} error={error} delay={400} />
 
       <footer>
-        <p className="text-center">Vittor</p>
+        <p className="text-center text-sm">
+          @ {new Date().getFullYear()} Vittor Pelicarto
+        </p>
       </footer>
     </main>
   )

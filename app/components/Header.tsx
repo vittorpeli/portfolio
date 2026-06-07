@@ -47,9 +47,11 @@ export function Header() {
               <span className="text-sm">{profile.location}</span>
             </div>
           </div>
-          <div className="size-24 sm:size-32 rounded-full bg-surface-subtle border border-zinc-border flex items-center justify-center text-4xl font-semibold text-foreground-text shrink-0">
-            {profile.name.charAt(0)}
-          </div>
+          <img
+            src={profile.photoUrl}
+            alt={profile.name}
+            className="size-24 sm:size-32 rounded-full border border-zinc-border object-cover shrink-0"
+          />
         </div>
 
         <button

@@ -42,7 +42,7 @@ export const profile: Profile = {
   resumeUrl: '/resume.pdf',
   photoUrl: '/avatar.png',
   introduction:
-    'Engenheiro de Software com experiência prática no desenvolvimento de aplicações web modernas, responsivas e escaláveis. Histórico comprovado em arquitetura frontend utilizando o ecossistema React, TypeScript e Tailwind, além de vivência fullstack com Node.js e integração de Inteligência Artificial. Habilidade no desenvolvimento guiado a testes (TDD) e na aplicação de boas práticas de arquitetura (DDD e Clean Architecture). Experiente no trabalho sob metodologias ágeis e focado em entregar código limpo e de alta performance.',
+    'Engenheiro de Software com experiência prática no desenvolvimento de aplicações web modernas, responsivas e escaláveis. Histórico comprovado utilizando o ecossistema React e TypeScript, além de vivência fullstack com Node.js e integração de Inteligência Artificial. Habilidade no desenvolvimento guiado a testes (TDD) e na aplicação de boas práticas de arquitetura (DDD e Clean Architecture). Experiente no trabalho sob metodologias ágeis e focado em entregar código limpo e de alta performance.',
   skills: [
     {
       title: 'Frontend',
